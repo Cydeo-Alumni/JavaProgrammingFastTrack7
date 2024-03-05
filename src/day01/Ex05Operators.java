@@ -32,5 +32,28 @@ public class Ex05Operators {
         System.out.println(true | false); //true
         System.out.println(false || true); //true
         System.out.println(false | true); //true
+        //not operator
+        System.out.println(!true);
+        System.out.println(!false);
+        System.out.println(!!true);
+
+        //XOR operator
+        System.out.println(true ^ true); //false
+        System.out.println(false ^ false); //false
+        System.out.println(true ^ false); //true
+        System.out.println(false ^ true); //true
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

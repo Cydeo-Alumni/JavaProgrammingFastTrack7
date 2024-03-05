@@ -50,11 +50,11 @@ public class Ex07Loops {
         }
 
         System.out.println("--------------------");
-        //convert nums array to list then call for eachMethod(lambda)
+        //convert strings array to list then call for eachMethod(lambda)
         String[] strings = {"CR22", "UNI130", "GR44"};
 
-        List<String> numsList = Arrays.asList(strings);
-        numsList.forEach(s -> System.out.println("s = " + s));
+        List<String> strList = Arrays.asList(strings);
+        strList.forEach(s -> System.out.println("s = " + s));
 
         System.out.println("---------------------");
         //nested for loop, for each iteration of outer loop, inner loop will run completely

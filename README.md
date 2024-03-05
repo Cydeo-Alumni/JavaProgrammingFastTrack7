@@ -145,3 +145,191 @@ local vs instance?
 
 	instance variable declared inside the class, outside the methods.
 	scope is whole class
+=======================
+
+DAY 02:
+
+Operators:
+-arithmethmetic/math(+,-,/,%,*)
+-shorthand, unary (+=, -=, ++, --)
+-> pre , post increment/decrement
+pre -> ++n;
+post -> n++;
+
+-comparison -> >, <, !=, == etc
+-logical -> &, &&, |, ||, !, ^
+
+XOR operator ^ -> returns true only when conditions are different.
+
+if both conditions are same, it will return false.
+
+boolean a = true;
+boolean b = false;
+a ^ b => true
+
+boolean a = true;
+boolean b = true;
+a ^ b => false
+a || b => true
+==============================
+
+Conditional statements:
+1) if statements
+2) switch
+3) ternary
+----=
+1) if statement:
+   if(condition) {
+   //code
+   }
+   ---
+   if(condition) {
+   //code to run when true
+   } else {
+   //code to run when false
+   }
+   ----
+   if(conditionA) {
+   //code to run when A is true
+   } else if(conditionB) {
+   //code to run when B is true
+   } else if(conditionC) {
+   //code to run when C is true
+   } else {
+   //code to run when all above are false
+   }
+   ----
+   if(conditionA) {
+   if(conditionB){
+   //code B
+   }else {
+   //Code C
+   }
+   //code D
+   } else {
+   Code E
+   }
+
+   conditionA and ConditionB are true -> B, D
+   conditionA is true and ConditionB is false -> C, D
+   conditionA is false, ConditionB is true -> E
+   =======================
+
+switch(variable) { //String, int, Enums
+case 1:
+//code to run when case 1 is match
+break;
+case 2:
+//code to run when case 2 is match
+break;
+default:
+//when all cases mismatch
+}
+
+=======================
+
+var myVar = (conditionA) ? value when true : value when false
+
+String str;
+if(conditionA) {
+str = value when true
+} else {
+str = value when false
+}
+
+=======================
+
+When to use:
+if statements are most flexible, and can be used with all kind of conditions. paired with logical operator. ||, && etc,  >, <
+
+	if(a > b || a < c) {
+
+	}
+
+	we can use switch when we are comparing if variable EQUALS certain values. cannot handle other types of comparisons
+
+	switch(a) {
+		case "ABC":
+			//code
+			break;
+		case "RRT12":
+			//code
+			break;
+	}
+
+	ternary can be used to replace basic simple if else statement.
+===============================
+
+LOOPS in java:
+
+while, do while, for loop, for each loop
+
+we can have nested loops
+
+forEach method can also be used with collections
+
+while(conditions is true) {
+//keep running this code
+}
+
+do {
+//Do this once, then keep doing while condition is true
+}while(conditions is true);
+
+while vs do while?
+
+while loop checks condition first and runs loop block code if true.
+
+do while runs loop block code once, then checks if conditions is true.
+
+---------
+for loop with iterator, can be used when we know number of iterations beforehand.
+
+for(int i = 0; i <= 100; i++) {
+//loop code
+}
+
+for each loop is used with arrays, collections. it will start from first element until the last element.
+
+int[] nums = {43, 123, 53};
+
+for(int n : nums) {
+println(n);
+}
+
+String[] strs = {"43", "123", "53"};
+
+for(String s : strs) {
+println(s);
+}
+-----------------------
+
+String:
+String is a class in java lang package.
+String can store "value" in double quotes, and uses final char[] array internally.
+
+String pool is an area in Heap memory where string objects are stored and can be reused.
+
+String a = "java";
+String b = "java";
+"java" is created in String pool, since we are using double quotes to create a String. One object is created and reused
+
+if(a == b) ==> true. both are pointing to same object in string pool
+
+-------------
+String a = new String("java");
+String b = new String("java");
+
+We are using NEW keyword, 2 objects are created outside String pool.
+
+a == b ==> false because a and b are referring to different objects.
+
+a.equals(b) => true
+a.equalsIgnoreCase(b) => true
+-------------
+
+
+
+
+
+

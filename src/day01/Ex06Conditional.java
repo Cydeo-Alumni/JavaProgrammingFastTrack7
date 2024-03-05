@@ -42,5 +42,6 @@ public class Ex06Conditional {
         //weekday or weekend
         String typeOfDay = (day <= 5)? "weekday" : "weekend";
         System.out.println("typeOfDay = " + typeOfDay);
+
     }
 }

@@ -329,6 +329,148 @@ a.equalsIgnoreCase(b) => true
 -------------
 
 
+================
+
+DAY 04:
+
+Methods:
+-> when I am assigned automation task during sprint planning.
+-> analyze -> make sure steps, and acceptance criteria is CLEAR. Ask from BA, Dev, other team member if not clear
+-> in progress:
+-> test manually, if any bugs, report them. Most bugs can be caught here
+-> testing manually: make it more clear about functionality, test data requirements, steps etc deeper.
+-> start automation:
+-> look at framework and see if any similar scenario was automated before
+-> look at any steps in this scenario are common to other tests that were automated before
+-> if yes, look at what REUSABLE methods, utilities, page object elements/methods can be reused.
+-> When writing doing automation development, please focus on reusability.
+==============================================
+
+
+COMMAND/CTRL+SHIFT+F -> global search in IntelliJ
+
+Methods:
+
+Help create reusable code
+Void -> performs actions, does not return value.
+-> Ex: setter method
+
+Return -> method that performs actions, then returns value.
+We use return keyword to return value
+======
+
+Method that with or without parameters.
+
+Void + no params:
+public static void m1() {}
+
+Void + with params:
+public static void m2(String str, int num){}
+
+Return + no params:
+public static int m3(){
+return 2024;
+}
+
+Return + with params:
+public static boolean m4(int num) {
+return num > 0;
+}
+================
+
+To make our code more Reusable
+=> methods:
+-> general reusable methods(reverseString )/utility methods:
+configReader etc
+-> application specific reusable methods(page object methods)
+
+Naming of methods:
+-> code readability.
+-> make sure method, and variable names are in alignment of naming conventions in your project
+================
+
+Method overloading:
+
+2 or more methods with SAME NAME, DIFFERENT PARAMETERS.
+
+DIFFERENT: data types of params, number of params, or order of params different
+
+public void m1(){}
+public void m1(String str){}
+public boolean m1(boolean bl){}
+public boolean m1(int n1, int n2){}
+public boolean m1(double n1, int n2){}
+public boolean m1(int n2, double n1){}
+
+Once we overload, return type can be different.
+
+public void m1(){}
+public int m1(String str){}
+
+Error below, because we cannot just change the param without properly overloading.
+public void m1(){}
+public int m1(){}
+
+Error, we look at variable parameter types and count. Variable names does not matter.
+public void m1(int n1, int n2){}
+public void m1(int n2, int n1){}
+================
+
+IQ: Is java pass by value or pass by reference?
+
+Java is pass by value, it copies the value to method parameter.
+
+Ex:
+main {
+int n = 55;
+add5(n);//int num = n;
+println(n); //55
+}
+
+public static void add5(int num) {
+num = num+5; //60
+}
+
+================
+
+Array/Object example:
+
+Array is an object with multiple value stored.
+
+When we pass the array, we copy the reference to that object.
+
+So inside the method:
+1) reassign new array object.
+-> it does not affect to original array
+2) change existing values of array
+-> it effects original as well because they are both pointing to same object
+
+int[] nums = {3,2,6};
+addExtraNum(nums);
+println(Arrays.toString(nums)); // no change 3,2,6
+
+increaseNum(nums);
+println(Arrays.toString(nums));//changes 13,2,6
+
+//reassign new array object.
+public static void addExtraNum(int[] nums) {
+nums = new int[]{3,2,6,9};
+}
+
+//change existing values of array
+public static void increaseNum(int[] nums) {
+nums[0] += 10;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

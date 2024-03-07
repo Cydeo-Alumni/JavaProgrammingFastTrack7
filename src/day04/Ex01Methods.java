@@ -32,7 +32,6 @@ public class Ex01Methods {
         }
         return str.substring(str.length()-3);
     }
-
 }
 
 

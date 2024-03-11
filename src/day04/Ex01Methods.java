@@ -1,5 +1,7 @@
 package day04;
 
+import day05.products.*;
+
 public class Ex01Methods {
     public static void main(String[] args) {
         greetEveryone();
@@ -9,6 +11,7 @@ public class Ex01Methods {
         System.out.println(getLast3FromString("ab"));
         String s = null;
         System.out.println(getLast3FromString(s));
+        Product p = new Product();
     }
     //Void , no params
     public static void greetEveryone() {

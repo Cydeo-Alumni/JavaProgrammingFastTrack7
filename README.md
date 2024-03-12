@@ -461,6 +461,241 @@ nums = new int[]{3,2,6,9};
 public static void increaseNum(int[] nums) {
 nums[0] += 10;
 }
+===============================
+
+Java review Day 05:
+
+
+• Can you run a program without the main method?
+We can use test frameworks like JUnit, TestNG and @Test annotation. So it will help run the test and we do not need to add a main method.
+In Cucumber framework, CucumberRunner can be used to initialize execution.
+Internally they invoke main method.
+
+-Can you overload the main method?
+Yes, we can by changing the parameters. however it is no longer a runner method that Jvm will invoke
+
+public static void main(int[] args) {
+
+}
+
+-Why is the main method static?
+So that method can be called without creating an object of the class.
+
+-Why is there a String[] parameter?
+This is to be able to pass runtime arguments.
+Usually from command line or IDE run configurations.
+
+================
+
+DAY 06:
+For each loop:
+Useful while iterating over arrays and other collections.
+
+for(dataType var: collection) {
+
+}
+
+=================
+
+Multi-Dimensional array:
+
+An element of an array is another array.
+Normally we could use 2D array in dataProvider method in TestNG
+
+String[][] users = {
+{"user4433", "abc442"},
+{"user1133", "ade442"},
+{"userdd33", "a12442"}
+};
+
+We could also copy webtable data from webpage to 2D array using Selenium and xpath.
+
+============
+
+Var-Args:
+
+It is used as parameter to a method, and adds ability to pass multiple values seperated by comma.
+Inside the method, Var-args parameter will be treated as regular array.
+
+public static void m1(int... nums) {
+//nums is used as an array
+}
+
+m1(32,1,2)
+m1()
+m1(23,34,34,545,134,66,56,57)
+
+================================
+
+Array vs ArrayList?
+
+Array is fixed size, we cannot resize once we create the object
+
+ArrayList is dynamic size, we can add or remove elements
+
+--------------
+
+Array can contain Primitives and objects(non-primitives)
+ArrayList is part of collections framework and can contain only objects(non-primitives)
+
+--------------
+ArrayList uses arrays internally.
+
+--------------
+
+Recursion:
+
+When a method calls itself, it is a recursive method.
+
+Normally in test automation development, we do not use this approach, instead we use loops.
+
+m1(4);
+4
+3
+2
+1
+0
+-1
+public static void m1(int num) {
+System.out.println(num);
+m1(num-1);
+}
+
+We always need to add breaking/stopping condition to prevent infinite loop.
+
+public static void m1(int num) {
+System.out.println(num);
+if(num > 0)
+m1(num-1);
+}
+
+==================
+
+Class and Object
+
+Class is a blueprint for an object
+We define data and behaviour of object in a class
+
+data -> using variables
+behaviour -> using methods
+================
+We can create instance or object from a class using new keyword.
+
+public class Car {
+String make;
+public void drive(){...}
+}
+Create object/instantiate:
+Car car = new Car();
+car.make = "Honda";
+car.drive();
+================
+
+Instance vs static variables
+
+instance variables belong to objects and each object will have its own copy of variables.
+
+static variables belong to class directly and the value is shared by all objects. it has single copy.
+We can access static variables without creating an object.
+
+Constructor:
+Is a method in a class that automatically runs when we create object of the class.
+It has same name as classname, no return type.
+We can add parameters to constructors.
+We can overload constructors
+
+Constructor chaining:
+we can call one constructor from another constructor using THIS keyword.
+
+public class A{
+public A() {
+this("hi");
+}
+
+	public A(String str) {
+		println(str);
+	}
+}
+=============
+
+this vs this():
+
+this. is used to refer to instance of the object and instance variables and methods
+Usually used to differentiate between local and instance variables:
+this.name = name;
+
+this() -> is used for chaining constructors. calling one constructor from another one.
+
+======================
+
+static block vs instance init block?
+
+static block runs once before anything else when the class is loaded(whenever we use the class)
+
+instance init block-> similar to constructor, it runs every time we create object of the class
+======================
+
+Inheritance:
+
+Sub/child class inherits variables and methods from super/parent class.
+
+It helps with reusability and design
+
+IS-A relationship is inheritance
+Child class IS-A Parent class
+
+Student IS-A Person
+
+public class Person {//var, methods}
+
+public class Student extends Person {}
+================
+
+Has-A relationship -> it is when a class has instance variable of type of different class. Also called Composition
+
+public class House {
+Address address;
+}
+
+House HAS-A Address
+==========================
+
+What is inherited ?
+
+Depends on access modifiers:
+
+Public,Protected -> always inherited
+Default -> inherited if in same package
+private -> is not inherited
+Constructors are not inherited
+Final classes cannot be inherited.
+
+Access modifier:
+Public -> visible to everyone
+protected -> visible to everyone in same package and sub classes in other packages
+default -> package private. visible to everyone in same package
+private -> visible to same class only
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

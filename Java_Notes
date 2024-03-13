@@ -9,7 +9,7 @@ I am comfortable with core java, flow control, string manipulation, collections,
 
 Why did you choose java for automation?
 
-Java is high level object oriented language.
+Java is high level object oriented language. 
 It is platform independent
 It has many open source libraries for test automation. JUnit, TestNG, Selenium , JDBC, RestAssured etc
 It is a popular language for web backend , mobile development, so using java for automation is makes it in sync with developer environment.
@@ -21,13 +21,13 @@ Jdk, jre, jvm?
 
 Jdk - Java dev kit -> is needed for java development. It contains compiler and JRE, JVM.
 
-JRE -> Java runtime environment -> used to run compiled java code(bytecode), uses JVM to run
+JRE -> Java runtime environment -> used to run compiled java code(bytecode), uses JVM to run 
 
 JVM -> java virtual machine -> used to run java compiled bytecode
 
 ================
 Explain main method:
-public static void main(String[] args)
+ public static void main(String[] args)
 
 Main method, is called by Jvm to start execution of java program.
 
@@ -43,7 +43,7 @@ System.out.println("Hello World");
 
 System is a class in java.lang package
 out -> static variable of PrintStream type:
-public static final PrintStream out
+	public static final PrintStream out
 println -> is a void method in PrintStream class
 "Hello World" -> is a input to be printed out
 
@@ -76,14 +76,14 @@ Object obj = new String("abc");
 Sometimes, when we write a class, we want to be able to use for all types. In that case we can use Generic type.
 
 public class Device<T> {
-T value;
+	T value;
 }
 =======================
 
 What are Wrapper classes:
 Each primitive has a matching Wrapper class.
 Primitives are just values without any behaviour.
-Wrapper classes add behaviour to primitives also ability to become an object.
+Wrapper classes add behaviour to primitives also ability to become an object. 
 We can use wrapper types with java collections. Java collections does not work with primitives. Only array can work with both
 
 byte -> Byte
@@ -139,7 +139,7 @@ byte n4 = (byte)n3; //cast from large to small
 =======================
 
 Variables:
-local vs instance?
+	local vs instance?
 
 	local variable declared inside the method or a block. and scope is limited to that block.
 
@@ -149,12 +149,12 @@ local vs instance?
 
 DAY 02:
 
-Operators:
+Operators: 
 -arithmethmetic/math(+,-,/,%,*)
 -shorthand, unary (+=, -=, ++, --)
--> pre , post increment/decrement
-pre -> ++n;
-post -> n++;
+	-> pre , post increment/decrement
+		pre -> ++n;
+		post -> n++;
 
 -comparison -> >, <, !=, == etc
 -logical -> &, &&, |, ||, !, ^
@@ -174,56 +174,56 @@ a || b => true
 ==============================
 
 Conditional statements:
-1) if statements
-2) switch
-3) ternary
+	1) if statements
+	2) switch
+	3) ternary
 ----=
 1) if statement:
-   if(condition) {
-   //code
-   }
-   ---
-   if(condition) {
-   //code to run when true
-   } else {
-   //code to run when false
-   }
-   ----
-   if(conditionA) {
-   //code to run when A is true
-   } else if(conditionB) {
-   //code to run when B is true
-   } else if(conditionC) {
-   //code to run when C is true
-   } else {
-   //code to run when all above are false
-   }
-   ----
-   if(conditionA) {
-   if(conditionB){
-   //code B
-   }else {
-   //Code C
-   }
-   //code D
-   } else {
-   Code E
-   }
+	if(condition) {
+		//code
+	}
+	---
+	if(condition) {
+		//code to run when true
+	} else {
+		//code to run when false
+	}
+	----
+	if(conditionA) {
+		//code to run when A is true
+	} else if(conditionB) {
+		//code to run when B is true
+	} else if(conditionC) {
+		//code to run when C is true
+	} else {
+		//code to run when all above are false
+	}
+	----
+	if(conditionA) {
+		if(conditionB){
+			//code B
+		}else {
+			//Code C
+		}
+		//code D
+	} else {
+		Code E
+	}
 
-   conditionA and ConditionB are true -> B, D
-   conditionA is true and ConditionB is false -> C, D
-   conditionA is false, ConditionB is true -> E
-   =======================
+	conditionA and ConditionB are true -> B, D
+	conditionA is true and ConditionB is false -> C, D
+	conditionA is false, ConditionB is true -> E
+=======================
 
 switch(variable) { //String, int, Enums
-case 1:
-//code to run when case 1 is match
-break;
-case 2:
-//code to run when case 2 is match
-break;
-default:
-//when all cases mismatch
+	case 1:
+		//code to run when case 1 is match
+		break;
+	case 2:
+		//code to run when case 2 is match
+		break;
+	default:
+		//when all cases mismatch
 }
 
 =======================
@@ -232,15 +232,15 @@ var myVar = (conditionA) ? value when true : value when false
 
 String str;
 if(conditionA) {
-str = value when true
+	str = value when true 
 } else {
-str = value when false
+	str = value when false
 }
 
 =======================
 
 When to use:
-if statements are most flexible, and can be used with all kind of conditions. paired with logical operator. ||, && etc,  >, <
+	if statements are most flexible, and can be used with all kind of conditions. paired with logical operator. ||, && etc,  >, <
 
 	if(a > b || a < c) {
 
@@ -269,11 +269,11 @@ we can have nested loops
 forEach method can also be used with collections
 
 while(conditions is true) {
-//keep running this code
+	//keep running this code
 }
 
 do {
-//Do this once, then keep doing while condition is true
+	//Do this once, then keep doing while condition is true
 }while(conditions is true);
 
 while vs do while?
@@ -286,7 +286,7 @@ do while runs loop block code once, then checks if conditions is true.
 for loop with iterator, can be used when we know number of iterations beforehand.
 
 for(int i = 0; i <= 100; i++) {
-//loop code
+	//loop code
 }
 
 for each loop is used with arrays, collections. it will start from first element until the last element.
@@ -294,13 +294,13 @@ for each loop is used with arrays, collections. it will start from first element
 int[] nums = {43, 123, 53};
 
 for(int n : nums) {
-println(n);
+	println(n);
 }
 
 String[] strs = {"43", "123", "53"};
 
 for(String s : strs) {
-println(s);
+	println(s);
 }
 -----------------------
 
@@ -334,16 +334,16 @@ a.equalsIgnoreCase(b) => true
 DAY 04:
 
 Methods:
--> when I am assigned automation task during sprint planning.
--> analyze -> make sure steps, and acceptance criteria is CLEAR. Ask from BA, Dev, other team member if not clear
--> in progress:
--> test manually, if any bugs, report them. Most bugs can be caught here
--> testing manually: make it more clear about functionality, test data requirements, steps etc deeper.
--> start automation:
--> look at framework and see if any similar scenario was automated before
--> look at any steps in this scenario are common to other tests that were automated before
--> if yes, look at what REUSABLE methods, utilities, page object elements/methods can be reused.
--> When writing doing automation development, please focus on reusability.
+	-> when I am assigned automation task during sprint planning. 
+		-> analyze -> make sure steps, and acceptance criteria is CLEAR. Ask from BA, Dev, other team member if not clear
+		-> in progress:
+			-> test manually, if any bugs, report them. Most bugs can be caught here
+			-> testing manually: make it more clear about functionality, test data requirements, steps etc deeper.
+			-> start automation:
+				-> look at framework and see if any similar scenario was automated before
+				-> look at any steps in this scenario are common to other tests that were automated before
+				-> if yes, look at what REUSABLE methods, utilities, page object elements/methods can be reused.
+				-> When writing doing automation development, please focus on reusability.
 ==============================================
 
 
@@ -353,7 +353,7 @@ Methods:
 
 Help create reusable code
 Void -> performs actions, does not return value.
--> Ex: setter method
+	-> Ex: setter method
 
 Return -> method that performs actions, then returns value.
 We use return keyword to return value
@@ -369,24 +369,24 @@ public static void m2(String str, int num){}
 
 Return + no params:
 public static int m3(){
-return 2024;
+	return 2024;
 }
 
 Return + with params:
 public static boolean m4(int num) {
-return num > 0;
+	return num > 0;
 }
 ================
 
-To make our code more Reusable
-=> methods:
--> general reusable methods(reverseString )/utility methods:
-configReader etc
--> application specific reusable methods(page object methods)
+To make our code more Reusable 
+	=> methods:
+	-> general reusable methods(reverseString )/utility methods:
+		configReader etc
+	-> application specific reusable methods(page object methods)
 
 Naming of methods:
--> code readability.
--> make sure method, and variable names are in alignment of naming conventions in your project
+	-> code readability.
+	-> make sure method, and variable names are in alignment of naming conventions in your project
 ================
 
 Method overloading:
@@ -422,13 +422,13 @@ Java is pass by value, it copies the value to method parameter.
 
 Ex:
 main {
-int n = 55;
-add5(n);//int num = n;
-println(n); //55
+	int n = 55;
+	add5(n);//int num = n;
+	println(n); //55
 }
-
+						
 public static void add5(int num) {
-num = num+5; //60
+	num = num+5; //60
 }
 
 ================
@@ -440,10 +440,10 @@ Array is an object with multiple value stored.
 When we pass the array, we copy the reference to that object.
 
 So inside the method:
-1) reassign new array object.
--> it does not affect to original array
-2) change existing values of array
--> it effects original as well because they are both pointing to same object
+	1) reassign new array object.
+		-> it does not affect to original array
+	2) change existing values of array
+		-> it effects original as well because they are both pointing to same object
 
 int[] nums = {3,2,6};
 addExtraNum(nums);
@@ -454,12 +454,12 @@ println(Arrays.toString(nums));//changes 13,2,6
 
 //reassign new array object.
 public static void addExtraNum(int[] nums) {
-nums = new int[]{3,2,6,9};
+	nums = new int[]{3,2,6,9};
 }
 
 //change existing values of array
 public static void increaseNum(int[] nums) {
-nums[0] += 10;
+	nums[0] += 10;
 }
 ===============================
 
@@ -475,7 +475,7 @@ Internally they invoke main method.
 Yes, we can by changing the parameters. however it is no longer a runner method that Jvm will invoke
 
 public static void main(int[] args) {
-
+	
 }
 
 -Why is the main method static?
@@ -492,7 +492,7 @@ For each loop:
 Useful while iterating over arrays and other collections.
 
 for(dataType var: collection) {
-
+	
 }
 
 =================
@@ -503,10 +503,10 @@ An element of an array is another array.
 Normally we could use 2D array in dataProvider method in TestNG
 
 String[][] users = {
-{"user4433", "abc442"},
-{"user1133", "ade442"},
-{"userdd33", "a12442"}
-};
+						{"user4433", "abc442"},
+						{"user1133", "ade442"},
+						{"userdd33", "a12442"}
+					};
 
 We could also copy webtable data from webpage to 2D array using Selenium and xpath.
 
@@ -514,11 +514,11 @@ We could also copy webtable data from webpage to 2D array using Selenium and xpa
 
 Var-Args:
 
-It is used as parameter to a method, and adds ability to pass multiple values seperated by comma.
+It is used as parameter to a method, and adds ability to pass multiple values seperated by comma. 
 Inside the method, Var-args parameter will be treated as regular array.
 
 public static void m1(int... nums) {
-//nums is used as an array
+	//nums is used as an array
 }
 
 m1(32,1,2)
@@ -557,16 +557,16 @@ m1(4);
 0
 -1
 public static void m1(int num) {
-System.out.println(num);
-m1(num-1);
+	System.out.println(num);
+	m1(num-1);
 }
 
 We always need to add breaking/stopping condition to prevent infinite loop.
 
 public static void m1(int num) {
-System.out.println(num);
-if(num > 0)
-m1(num-1);
+	System.out.println(num);
+	if(num > 0)
+		m1(num-1);
 }
 
 ==================
@@ -582,8 +582,8 @@ behaviour -> using methods
 We can create instance or object from a class using new keyword.
 
 public class Car {
-String make;
-public void drive(){...}
+	String make;
+	public void drive(){...}
 }
 Create object/instantiate:
 Car car = new Car();
@@ -608,9 +608,9 @@ Constructor chaining:
 we can call one constructor from another constructor using THIS keyword.
 
 public class A{
-public A() {
-this("hi");
-}
+	public A() {
+		this("hi");
+	}
 
 	public A(String str) {
 		println(str);
@@ -641,7 +641,7 @@ Sub/child class inherits variables and methods from super/parent class.
 
 It helps with reusability and design
 
-IS-A relationship is inheritance
+IS-A relationship is inheritance 
 Child class IS-A Parent class
 
 Student IS-A Person
@@ -654,7 +654,7 @@ public class Student extends Person {}
 Has-A relationship -> it is when a class has instance variable of type of different class. Also called Composition
 
 public class House {
-Address address;
+	 Address address;
 }
 
 House HAS-A Address
@@ -688,23 +688,23 @@ Super class - Sub class
 When we create object of Sub class, Super class constructor runs first.
 
 public class A {
-public A() {
-System.out.println("A");
-}
+	public A() {
+		System.out.println("A");
+	}
 }
 
 public class B extends A {
-public B() {
-super(); //compiler adds super class constructor call
-System.out.println("B");
-}
+	public B() {
+		super(); //compiler adds super class constructor call
+		System.out.println("B");
+	}
 }
 ----------
 
 A a = new A();==> "A"
 
 B b = new B();==> "A"
-"B"
+				  "B"
 
 When we create object of B, firstly A class constructor will run then B class constructor runs.
 ============================
@@ -714,22 +714,22 @@ super() keyword is used for calling parent class constructor from child class co
 
 
 public class A {
-public A(String str) {
-System.out.println("A => " + str);
-}
+	public A(String str) {
+		System.out.println("A => " + str);
+	}
 }
 
 public class B extends A {
-public B() {
-//super();//not compile because no-args constructor is not present
-super("hi");
-System.out.println("B");
-}
+	public B() {
+		//super();//not compile because no-args constructor is not present
+		super("hi");
+		System.out.println("B");
+	}
 }
 
 B b = new B();
-A => Hi
-B
+	A => Hi
+	B
 ===========================
 
 super vs this:
@@ -739,7 +739,7 @@ super keyword is used to reference parent class object and call parent class mem
 this keyword is used to reference currunt class object and used to call current class members.
 
 public class A {
-
+	
 	public String name = "A name";
 
 	public A(String str) {
@@ -748,7 +748,7 @@ public class A {
 }
 
 public class B extends A {
-
+	
 	public String name = "B name";
 
 	public void printName() {
@@ -773,10 +773,10 @@ super() -> is used to call parent class constructor from child class constructor
 both statements need to be first in the constructor.
 
 public class A {
-public A(String str) {
-this(); //optionally I can add this keyword
-System.out.println("A => " + str);
-}
+	public A(String str) {
+		this(); //optionally I can add this keyword
+		System.out.println("A => " + str);
+	}
 
 	public A() {
 		System.out.println("A");
@@ -784,10 +784,10 @@ System.out.println("A => " + str);
 }
 
 public class B extends A {
-public B() {
-super();
-System.out.println("B");
-}
+	public B() {
+		super();
+		System.out.println("B");
+	}
 
 	public B(String str) {
 		super(str);
@@ -803,11 +803,11 @@ Are static members(variables and methods) inherited or no?
 If access modifier allows, static members are inherited.
 
 public class A {
-public static String name = "John";
+	public static String name = "John";
 }
 
 public class B extends A {
-
+	
 }
 
 println(A.name); "John"
@@ -825,16 +825,16 @@ We can only override inherited method.
 Method name and paramethers MUST be same.
 
 public class A {
-public void m1() {
-println("A class m1")
-}
+	public void m1() {
+		println("A class m1")
+	}
 }
 
 public class B extends A {
-@Override
-public void m1() {
-println("B class m1")
-}
+	@Override
+	public void m1() {
+		println("B class m1")
+	}
 }
 
 final methods that are inherited cannot be overridden.
@@ -842,12 +842,12 @@ final methods are used to prevent overrriding
 =========================
 
 Overriding rules:
--> Method name and parameters must be same
--> access modifier can be same or most visible:
--> public -> public
--> protected -> protected,public
--> default -> default,protected,public
--> private -> not inherited.cannot override
+	-> Method name and parameters must be same
+	-> access modifier can be same or most visible:
+		-> public -> public
+		-> protected -> protected,public
+		-> default -> default,protected,public
+		-> private -> not inherited.cannot override
 
 	-> return type:
 		-> same or covariant(sub class)
@@ -856,28 +856,28 @@ Overriding rules:
 			-> Person -> Person, Student, Teacher, Sdet
 
 public class Student extends Person {
-
+	
 }
 public class Teacher extends Person {
-
+	
 }
 public class Sdet extends Person {
-
+	
 }
 
 public class A {
-public Person m1() {
-Person p1 = new Person("Mike");
-return p1;
-}
+	public Person m1() {
+		Person p1 = new Person("Mike");
+		return p1;
+	}
 }
 
 public class B extends A {
-@Override
-public Student m1() {
-Student st = new Student();
-return st;
-}
+	@Override
+	public Student m1() {
+		Student st = new Student();
+		return st;
+	}
 }
 ============================
 Method overriding vs method overloading?
@@ -900,19 +900,19 @@ overloading -> method can be in same class or inherited
 
 Method overriding -> 2 methods with SAME name and SAME parameters. Used in inherited method
 
-Method overloading -> 2 methods with SAME name and DIFFERENT parameters.
+Method overloading -> 2 methods with SAME name and DIFFERENT parameters.  
 ==============================
 
 In Automation:
-Method overloading can used in page object classes.
-public class LoginPage {
-//weblements
-public void login(String role) {
-//switch (role){
-case "admin" :
-case "guest" :
-}
-}
+	Method overloading can used in page object classes.
+	public class LoginPage {
+		//weblements
+		public void login(String role) {
+			//switch (role){
+				case "admin" :
+				case "guest" :	
+			}
+		}
 
 		public void login(String userName, String password) {
 			//switch (role){
@@ -929,69 +929,69 @@ In Util methods DbUtil. read value from column name or column index number.
 Overriding: can also be used in page objects.
 
 public class BasePage {
-//common elements and methods here
-public void closePopUp() {
-//close sign up for news popup
-}
+	//common elements and methods here
+	public void closePopUp() {
+		//close sign up for news popup
+	}
 }
 
 public class InstructorsPage extends BasePage {
-public void closePopUp() {
-//close sign up for jobs notification popup
-//this one can be different, close button locator is different etc
-}
+	public void closePopUp() {
+		//close sign up for jobs notification popup
+		//this one can be different, close button locator is different etc
+	}
 }
 =========================
 
 public class TestBase {
-@Before
-public void setUp(){
-//general set up. goto homepage
-}
+	@Before
+	public void setUp(){
+		//general set up. goto homepage
+	}
 
 	public void verifyText(String exp, String act){}
 }
 
 public class SearchTests extends TestBase {
-@Before
-public void setUp(){
-super.setUp();
-//specific set up for page, novigation etc
-}
-@Override
-public void verifyText(String exp, String act){
-//some extra string manipulation steps
-then compare
-}
+	@Before
+	public void setUp(){
+		super.setUp();
+		//specific set up for page, novigation etc
+	}
+	@Override
+	public void verifyText(String exp, String act){
+		//some extra string manipulation steps
+		then compare
+	}
 }
 public class SearchApiTests extends TestBase {
-@Before
-public void setUp(){
-//specific set up for page, novigation etc
-}
+	@Before
+	public void setUp(){
+		//specific set up for page, novigation etc
+	}
 }
 =========================
 
 Method hiding:
--> static methods are hidden, not overridden.
--> based on where we can the method, it will refer to closest one
+	-> static methods are hidden, not overridden.
+	-> based on where we can the method, it will refer to closest one
 
 public class A {
-public static void m1() {
-println("A - m1");
-}
+	public static void m1() {
+		println("A - m1");
+	}
 
 	public void m2() {
 		m1();
 	}
 }
 public class B extends A {
-public static void m1() {
-println("B - m1");
-}
-public void m3() {
-m1();
-}
+	public static void m1() {
+		println("B - m1");
+	}
+	public void m3() {
+		m1();
+	}
 }
 
 A.m1(); => A - m1
@@ -1006,21 +1006,21 @@ Variable hiding:
 We cannot override inherited variables, we can only hide them.
 
 public class A {
-int num = 10;
-public void m2() {
-println(num);
-}
+	int num = 10;
+	public void m2() {
+		println(num);
+	}
 }
 public class B extends A {
-int num = 30;
-public void m3() {
-println(num);
-println(super.num)
-}
+	int num = 30;
+	public void m3() {
+		println(num);
+		println(super.num)
+	}
 }
 
 b.m3(); -> 30
--> 10
+		-> 10
 ==============================
 
 Exceptions in java:
@@ -1039,7 +1039,7 @@ Ex: SQLException, IOException, FileNotFoundException etc
 
 unchecked also called Runtime exceptions, happen during runtime of code, they are optional to handle, normally we need to prevent them.
 
-Ex: NullpointerException, Outofbounds, NoSuchElement, StaleElementException,
+Ex: NullpointerException, Outofbounds, NoSuchElement, StaleElementException, 
 
 =======================
 
@@ -1054,15 +1054,15 @@ So we have two options:
 1) handle using try catch
 
 try {
-Thread.sleep(3000);
+    Thread.sleep(3000);
 }catch (InterruptedException e) {
-e.printStackTrace();
+    e.printStackTrace();
 }
 
 2) declare using throws in method
-   main(String[] args) throws InterruptedException {
-   =======================================
-   Unchecked : StringIndexOutOfBounds Exception
+main(String[] args) throws InterruptedException {
+=======================================
+Unchecked : StringIndexOutOfBounds Exception
 
 String str = "exception";
 System.out.println(str.charAt(55));
@@ -1077,14 +1077,33 @@ in below example, even though api call does not have CHECKED exception, I am usi
 Because I am not in control of API service in this case.
 
 class SMSVerificationService {
-public static String getSmsCode(int accountId) {
-try{
-Api call to endpoint adn extract sms code
-and return
-}catch(RuntimeException e) {
-return "";
-}
-}
+	public static String getSmsCode(int accountId) {
+		try{
+			Api call to endpoint adn extract sms code
+			and return
+		}catch(RuntimeException e) {
+			return "";
+		}
+	}
 }
 =======================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

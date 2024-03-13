@@ -1,7 +1,7 @@
 package day06.class_object;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //create book objects
         Book book1 = new Book();
         Book book2 = new Book(200, "James");
@@ -25,5 +25,11 @@ public class Main {
         System.out.println(Book.count);
         System.out.println(book1.count);
         System.out.println(book2.count);
+
+        Thread.sleep(3000);
+
+        String str = "exception";
+        System.out.println(str.charAt(5));
+
     }
 }

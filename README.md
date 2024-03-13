@@ -676,8 +676,331 @@ protected -> visible to everyone in same package and sub classes in other packag
 default -> package private. visible to everyone in same package
 private -> visible to same class only
 
+==========================
+
+DAY 07:
+------
+
+Inheritance and constructors:
+
+Super class - Sub class
+
+When we create object of Sub class, Super class constructor runs first.
+
+public class A {
+public A() {
+System.out.println("A");
+}
+}
+
+public class B extends A {
+public B() {
+super(); //compiler adds super class constructor call
+System.out.println("B");
+}
+}
+----------
+
+A a = new A();==> "A"
+
+B b = new B();==> "A"
+"B"
+
+When we create object of B, firstly A class constructor will run then B class constructor runs.
+============================
+
+super() keyword is used for calling parent class constructor from child class constructor.
+============================
 
 
+public class A {
+public A(String str) {
+System.out.println("A => " + str);
+}
+}
+
+public class B extends A {
+public B() {
+//super();//not compile because no-args constructor is not present
+super("hi");
+System.out.println("B");
+}
+}
+
+B b = new B();
+A => Hi
+B
+===========================
+
+super vs this:
+
+super keyword is used to reference parent class object and call parent class members.
+
+this keyword is used to reference currunt class object and used to call current class members.
+
+public class A {
+
+	public String name = "A name";
+
+	public A(String str) {
+		System.out.println("A => " + str);
+	}
+}
+
+public class B extends A {
+
+	public String name = "B name";
+
+	public void printName() {
+		System.out.println(name);//"B name"
+		System.out.println(super.name);//"A name"
+	}
+
+	public B() {
+		//super();//not compile because no-args constructor is not present
+		super("hi");
+		System.out.println("B");
+	}
+}
+==================
+
+this() vs super()
+
+this() -> is used to call another constructor in same class
+
+super() -> is used to call parent class constructor from child class constructor.
+
+both statements need to be first in the constructor.
+
+public class A {
+public A(String str) {
+this(); //optionally I can add this keyword
+System.out.println("A => " + str);
+}
+
+	public A() {
+		System.out.println("A");
+	}
+}
+
+public class B extends A {
+public B() {
+super();
+System.out.println("B");
+}
+
+	public B(String str) {
+		super(str);
+		//this(); will not compile as it needs to be first statement
+		System.out.println("B => " + str);
+	}
+
+}
+================================
+
+Are static members(variables and methods) inherited or no?
+
+If access modifier allows, static members are inherited.
+
+public class A {
+public static String name = "John";
+}
+
+public class B extends A {
+
+}
+
+println(A.name); "John"
+println(B.name); "John"
+===========================
+
+Method overriding:
+
+When a method is inherited to a sub class, we can change the implementation to customize for sub class.
+This process is called method overriding.
+
+method overriding -> changing the implementation of inherited method in a sub class
+
+We can only override inherited method.
+Method name and paramethers MUST be same.
+
+public class A {
+public void m1() {
+println("A class m1")
+}
+}
+
+public class B extends A {
+@Override
+public void m1() {
+println("B class m1")
+}
+}
+
+final methods that are inherited cannot be overridden.
+final methods are used to prevent overrriding
+=========================
+
+Overriding rules:
+-> Method name and parameters must be same
+-> access modifier can be same or most visible:
+-> public -> public
+-> protected -> protected,public
+-> default -> default,protected,public
+-> private -> not inherited.cannot override
+
+	-> return type:
+		-> same or covariant(sub class)
+			-> void -> void
+			-> String -> String
+			-> Person -> Person, Student, Teacher, Sdet
+
+public class Student extends Person {
+
+}
+public class Teacher extends Person {
+
+}
+public class Sdet extends Person {
+
+}
+
+public class A {
+public Person m1() {
+Person p1 = new Person("Mike");
+return p1;
+}
+}
+
+public class B extends A {
+@Override
+public Student m1() {
+Student st = new Student();
+return st;
+}
+}
+============================
+Method overriding vs method overloading?
+
+overriding -> method name must be same
+overloading -> method name must be same
+
+overriding -> method parameters must be same
+overloading -> method parameters must be different
+
+overriding -> access modifier can be same or more visible
+overloading -> access modifier can be different
+
+overriding -> return type must be same or sub type(covariant)
+overloading -> return type can be different
+
+overriding -> method must be inherited
+overloading -> method can be in same class or inherited
+==============================
+
+Method overriding -> 2 methods with SAME name and SAME parameters. Used in inherited method
+
+Method overloading -> 2 methods with SAME name and DIFFERENT parameters.
+==============================
+
+In Automation:
+Method overloading can used in page object classes.
+public class LoginPage {
+//weblements
+public void login(String role) {
+//switch (role){
+case "admin" :
+case "guest" :
+}
+}
+
+		public void login(String userName, String password) {
+			//switch (role){
+				case "admin" :
+				case "guest" :	
+			}
+		}
+
+	}
+In Util methods DbUtil. read value from column name or column index number.
+
+===============================
+
+Overriding: can also be used in page objects.
+
+public class BasePage {
+//common elements and methods here
+public void closePopUp() {
+//close sign up for news popup
+}
+}
+
+public class InstructorsPage extends BasePage {
+public void closePopUp() {
+//close sign up for jobs notification popup
+//this one can be different, close button locator is different etc
+}
+}
+=========================
+
+public class TestBase {
+@Before
+public void setUp(){
+//general set up. goto homepage
+}
+
+	public void verifyText(String exp, String act){}
+}
+
+public class SearchTests extends TestBase {
+@Before
+public void setUp(){
+super.setUp();
+//specific set up for page, novigation etc
+}
+@Override
+public void verifyText(String exp, String act){
+//some extra string manipulation steps
+then compare
+}
+}
+public class SearchApiTests extends TestBase {
+@Before
+public void setUp(){
+//specific set up for page, novigation etc
+}
+}
+=========================
+
+Method hiding:
+-> static methods are hidden, not overridden.
+-> based on where we can the method, it will refer to closest one
+
+public class A {
+public static void m1() {
+println("A - m1");
+}
+
+	public void m2() {
+		m1();
+	}
+}
+public class B extends A {
+public static void m1() {
+println("B - m1");
+}
+public void m3() {
+m1();
+}
+}
+
+A.m1(); => A - m1
+B.m1(); => B - m1
+-----------------
+
+A.m2(); => A - m1
+B.m3(); => B - m1
+-----------------
 
 
 

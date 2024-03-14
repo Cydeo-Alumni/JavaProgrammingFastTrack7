@@ -37,14 +37,24 @@ public class Scrum {
 //        tester3.work(0);
 //        tester3.name;
 //        tester3.salary;
+        System.out.println(tester3.toString());
 
         // reference of the interface
 
         System.out.println("------------------------------------------------");
-
+        //upcasting to parent interface
         CreateSmokeTest tester4 = new Tester("Merve", "SDET", 203_000);
 //        tester4.work();
         tester4.create();
+
+        ((Tester)tester4).work();
+        //downcast reference to Tester
+        Tester tester = (Tester)tester4;
+        tester.writeBugReport();
+        //upcasting: implicit,
+        Employee emp = tester;
+
+
         ((Tester)(tester4)).writeBugReport();
         ((Employee)(tester4)).work();
 

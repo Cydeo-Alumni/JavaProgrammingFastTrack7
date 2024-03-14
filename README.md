@@ -5,7 +5,7 @@ Day 01:
 How is your java experience?How do you rate your java skill? Do you have experience with java? etc
 
 I have 5 years of java programming experience. I used java for building automation frameworks and test automation development.
-I am comfortable with core java, flow control, string manipulation, collections, Object oriented programming, exception handling using java.
+I am comfortable with core java, flow control, string manipulation, collections, Object oriented programming, exception handling, debugging using java.
 
 Why did you choose java for automation?
 
@@ -1087,4 +1087,244 @@ return "";
 }
 }
 =======================================
+
+Day 08:
+
+Handling exceptions:
+
+try{
+//code
+}catch(Exception e) {
+e.printStackTrace();
+e.getMessage() ==> print
+}
+
+try{
+//code
+}catch(Exception e) {
+e.printStackTrace();
+e.getMessage() ==> print
+}finally {
+//code always runs, error or no error
+}
+
+try{
+//code that might throw exp, but we dont want to handle
+}finally{
+//code always runs
+}
+
+
+try{
+
+}catch(NullpointerException e) {
+
+}catch(RunTimeException e) {
+
+}
+==================================
+
+throw vs throws:
+-> throw is used to create exception manually.
+if(age < 18) {
+throw new IllegalArgumentException("age is too low");
+}
+
+throws -> is used to declare exception in method signature
+
+public static void main(String[] args) throws InterruptedException {} {}
+======
+For checked exceptions, we either handle using try catch, or declare using throws.
+
+=========================
+
+final, finally, finalize()
+
+final:
+final variable -> constant variable, cannot change value
+final method -> cannot override in sub class
+final class -> cannot extend to other classes
+
+finally -> is block in exception handling, that contains code that always runs, exception happens or no.
+-> System.exit(0) or some memory error etc
+
+finalize
+-> is a method that GC(garbage collector) calls when removing object from memory
+=====================
+
+Encapsulation: data hiding, making variables/data private and providing public getter and setters.
+
+==========================
+
+Abstraction -> is focusing on what todo instead of How todo.
+
+In java:
+-> abstract class
+-> interface
+
+Abstract class :
+-> abstract keyword is used
+-> cannot create object
+-> methods -> can have abstract, non abstract methods, constructors , blocks
+-> variables -> all types: instance , static, final etc
+-> class can extend only one abstract class
+
+Interface:
+-> interface keyword
+-> cannot create object
+-> methods: PUBLIC abstract, static , default methods
+-> variables -> Public static final variables only
+-> class can implement multiple interfaces
+
+What is difference between abstract class and interface?
+
+-Both are used to achieve Abstraction in java.and cannot create object
+-Class can extend one abstract class and can implement multiple interfaces.
+-methods:
+abstract class -> can have abstract, non abstract methods, constructors , blocks
+interface -> PUBLIC abstract, static , default methods
+-variables:
+abstract class ->all types: instance , static, final etc
+interface -> Public static final variables only
+=========================
+
+How to achieve multiple inheritance in java?
+
+In java , a sub class can inherit/extend only one super class.
+
+So java does not support multiple inheritance for classes.
+We can use multiple inheritance with interfaces, a sub class can implement multiple interfaces.
+
+public abstract class A {
+
+}
+
+public interface B{
+
+}
+
+public interface C{
+
+}
+
+public interface E extends B, C{
+
+}
+
+public class D extends A implements B,C {}
+===========================================
+
+
+public abstract class A implements B{
+public abstract void mA1();
+
+}
+
+public interface B{
+public abstract void mB1();
+}
+
+public interface C{
+
+}
+
+public interface E extends B, C{
+
+}
+
+public class D extends A implements B,C {
+public void mA1(){///}
+public void mB1(){///}
+}
+===========================================
+
+First Non-abstract class/concrete class is responsible for implementing all inherited abstract methods from abstract classes or interfaces.
+
+===========================================
+
+polymorphism:
+ability of object to take many forms:
+
+	reference type for object can be parent class or parent interface.
+
+	Person p1=new Student();
+
+	object is student
+	reference is parent class
+==================================
+
+public class A {}
+public class B extends A {}
+public class C extends B {}
+
+A obj = new B();
+A obj = new C();
+B obj = new C()
+==================================
+
+public class A {
+int num = 10;
+public void m1() {
+println("A-m1");
+}
+}
+public class B extends A {
+int num = 20;
+String str = "java";
+public void m2() {
+println("B-m2");
+}
+@Override
+public void m1() {
+println("B-m1");
+}
+}
+
+A a = new B();
+println(a.num); => 10
+a.m1(); => "B-m1"
+
+Below are not accessible:
+a.str
+a.m2();
+=============================
+
+public interface WebDriver{
+get,findElement, close, quit
+}
+public interface TakesScreenshot{
+getScreenshotAs(..)..
+}
+
+public class ChromeDriver implements WebDriver,TakesScreenshot
+
+WebDriver driver = new ChromeDriver();
+driver.get(url)
+Error: driver.getScreenshotAs()
+
+So we need to downcast to TakesScreenshot.
+
+((TakesScreenshot)driver).getScreenshotAs();
+
+TakesScreenshot screenshotDriver = (TakesScreenshot)driver;
+screenshotDriver.getScreenshotAs(A);
+screenshotDriver.getScreenshotAs(B);
+
+=======================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

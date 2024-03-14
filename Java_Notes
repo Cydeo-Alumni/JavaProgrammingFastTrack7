@@ -5,11 +5,11 @@ Day 01:
 How is your java experience?How do you rate your java skill? Do you have experience with java? etc
 
 I have 5 years of java programming experience. I used java for building automation frameworks and test automation development.
-I am comfortable with core java, flow control, string manipulation, collections, Object oriented programming, exception handling using java.
+I am comfortable with core java, flow control, string manipulation, collections, Object oriented programming, exception handling, debugging using java.
 
 Why did you choose java for automation?
 
-Java is high level object oriented language. 
+Java is high level object oriented language.
 It is platform independent
 It has many open source libraries for test automation. JUnit, TestNG, Selenium , JDBC, RestAssured etc
 It is a popular language for web backend , mobile development, so using java for automation is makes it in sync with developer environment.
@@ -21,7 +21,7 @@ Jdk, jre, jvm?
 
 Jdk - Java dev kit -> is needed for java development. It contains compiler and JRE, JVM.
 
-JRE -> Java runtime environment -> used to run compiled java code(bytecode), uses JVM to run 
+JRE -> Java runtime environment -> used to run compiled java code(bytecode), uses JVM to run
 
 JVM -> java virtual machine -> used to run java compiled bytecode
 
@@ -83,7 +83,7 @@ public class Device<T> {
 What are Wrapper classes:
 Each primitive has a matching Wrapper class.
 Primitives are just values without any behaviour.
-Wrapper classes add behaviour to primitives also ability to become an object. 
+Wrapper classes add behaviour to primitives also ability to become an object.
 We can use wrapper types with java collections. Java collections does not work with primitives. Only array can work with both
 
 byte -> Byte
@@ -149,7 +149,7 @@ Variables:
 
 DAY 02:
 
-Operators: 
+Operators:
 -arithmethmetic/math(+,-,/,%,*)
 -shorthand, unary (+=, -=, ++, --)
 	-> pre , post increment/decrement
@@ -232,7 +232,7 @@ var myVar = (conditionA) ? value when true : value when false
 
 String str;
 if(conditionA) {
-	str = value when true 
+	str = value when true
 } else {
 	str = value when false
 }
@@ -334,7 +334,7 @@ a.equalsIgnoreCase(b) => true
 DAY 04:
 
 Methods:
-	-> when I am assigned automation task during sprint planning. 
+	-> when I am assigned automation task during sprint planning.
 		-> analyze -> make sure steps, and acceptance criteria is CLEAR. Ask from BA, Dev, other team member if not clear
 		-> in progress:
 			-> test manually, if any bugs, report them. Most bugs can be caught here
@@ -378,7 +378,7 @@ public static boolean m4(int num) {
 }
 ================
 
-To make our code more Reusable 
+To make our code more Reusable
 	=> methods:
 	-> general reusable methods(reverseString )/utility methods:
 		configReader etc
@@ -426,7 +426,7 @@ main {
 	add5(n);//int num = n;
 	println(n); //55
 }
-						
+
 public static void add5(int num) {
 	num = num+5; //60
 }
@@ -475,7 +475,7 @@ Internally they invoke main method.
 Yes, we can by changing the parameters. however it is no longer a runner method that Jvm will invoke
 
 public static void main(int[] args) {
-	
+
 }
 
 -Why is the main method static?
@@ -492,7 +492,7 @@ For each loop:
 Useful while iterating over arrays and other collections.
 
 for(dataType var: collection) {
-	
+
 }
 
 =================
@@ -514,7 +514,7 @@ We could also copy webtable data from webpage to 2D array using Selenium and xpa
 
 Var-Args:
 
-It is used as parameter to a method, and adds ability to pass multiple values seperated by comma. 
+It is used as parameter to a method, and adds ability to pass multiple values seperated by comma.
 Inside the method, Var-args parameter will be treated as regular array.
 
 public static void m1(int... nums) {
@@ -641,7 +641,7 @@ Sub/child class inherits variables and methods from super/parent class.
 
 It helps with reusability and design
 
-IS-A relationship is inheritance 
+IS-A relationship is inheritance
 Child class IS-A Parent class
 
 Student IS-A Person
@@ -739,7 +739,7 @@ super keyword is used to reference parent class object and call parent class mem
 this keyword is used to reference currunt class object and used to call current class members.
 
 public class A {
-	
+
 	public String name = "A name";
 
 	public A(String str) {
@@ -748,7 +748,7 @@ public class A {
 }
 
 public class B extends A {
-	
+
 	public String name = "B name";
 
 	public void printName() {
@@ -807,7 +807,7 @@ public class A {
 }
 
 public class B extends A {
-	
+
 }
 
 println(A.name); "John"
@@ -856,13 +856,13 @@ Overriding rules:
 			-> Person -> Person, Student, Teacher, Sdet
 
 public class Student extends Person {
-	
+
 }
 public class Teacher extends Person {
-	
+
 }
 public class Sdet extends Person {
-	
+
 }
 
 public class A {
@@ -900,7 +900,7 @@ overloading -> method can be in same class or inherited
 
 Method overriding -> 2 methods with SAME name and SAME parameters. Used in inherited method
 
-Method overloading -> 2 methods with SAME name and DIFFERENT parameters.  
+Method overloading -> 2 methods with SAME name and DIFFERENT parameters.
 ==============================
 
 In Automation:
@@ -910,14 +910,14 @@ In Automation:
 		public void login(String role) {
 			//switch (role){
 				case "admin" :
-				case "guest" :	
+				case "guest" :
 			}
 		}
 
 		public void login(String userName, String password) {
 			//switch (role){
 				case "admin" :
-				case "guest" :	
+				case "guest" :
 			}
 		}
 
@@ -1039,7 +1039,7 @@ Ex: SQLException, IOException, FileNotFoundException etc
 
 unchecked also called Runtime exceptions, happen during runtime of code, they are optional to handle, normally we need to prevent them.
 
-Ex: NullpointerException, Outofbounds, NoSuchElement, StaleElementException, 
+Ex: NullpointerException, Outofbounds, NoSuchElement, StaleElementException,
 
 =======================
 
@@ -1088,8 +1088,229 @@ class SMSVerificationService {
 }
 =======================================
 
+Day 08:
+
+Handling exceptions:
+
+try{
+//code
+}catch(Exception e) {
+	e.printStackTrace();
+	e.getMessage() ==> print
+}
+
+try{
+  //code
+}catch(Exception e) {
+	e.printStackTrace();
+	e.getMessage() ==> print
+}finally {
+	//code always runs, error or no error
+}
+
+try{
+	//code that might throw exp, but we dont want to handle
+}finally{
+	//code always runs
+}
 
 
+try{
+
+}catch(NullpointerException e) {
+
+}catch(RunTimeException e) {
+
+}
+==================================
+
+throw vs throws:
+	-> throw is used to create exception manually.
+	if(age < 18) {
+		throw new IllegalArgumentException("age is too low");
+	}
+
+throws -> is used to declare exception in method signature
+
+public static void main(String[] args) throws InterruptedException {} {}
+======
+For checked exceptions, we either handle using try catch, or declare using throws.
+
+=========================
+
+final, finally, finalize()
+
+final:
+	final variable -> constant variable, cannot change value
+	final method -> cannot override in sub class
+	final class -> cannot extend to other classes
+
+finally -> is block in exception handling, that contains code that always runs, exception happens or no.
+	-> System.exit(0) or some memory error etc
+
+finalize
+	-> is a method that GC(garbage collector) calls when removing object from memory
+=====================
+
+Encapsulation: data hiding, making variables/data private and providing public getter and setters.
+
+==========================
+
+Abstraction -> is focusing on what todo instead of How todo.
+
+In java:
+	-> abstract class
+	-> interface
+
+Abstract class :
+	-> abstract keyword is used
+	-> cannot create object
+	-> methods -> can have abstract, non abstract methods, constructors , blocks
+	-> variables -> all types: instance , static, final etc
+	-> class can extend only one abstract class
+
+Interface:
+	-> interface keyword
+	-> cannot create object
+	-> methods: PUBLIC abstract, static , default methods
+	-> variables -> Public static final variables only
+	-> class can implement multiple interfaces
+
+What is difference between abstract class and interface?
+
+-Both are used to achieve Abstraction in java.and cannot create object
+-Class can extend one abstract class and can implement multiple interfaces.
+-methods:
+	abstract class -> can have abstract, non abstract methods, constructors , blocks
+	interface -> PUBLIC abstract, static , default methods
+-variables:
+	abstract class ->all types: instance , static, final etc
+	interface -> Public static final variables only
+=========================
+
+How to achieve multiple inheritance in java?
+
+In java , a sub class can inherit/extend only one super class.
+
+So java does not support multiple inheritance for classes.
+We can use multiple inheritance with interfaces, a sub class can implement multiple interfaces.
+
+public abstract class A {
+
+}
+
+public interface B{
+
+}
+
+public interface C{
+
+}
+
+public interface E extends B, C{
+
+}
+
+public class D extends A implements B,C {}
+===========================================
+
+
+public abstract class A implements B{
+	public abstract void mA1();
+
+}
+
+public interface B{
+	public abstract void mB1();
+}
+
+public interface C{
+
+}
+
+public interface E extends B, C{
+
+}
+
+public class D extends A implements B,C {
+	public void mA1(){///}
+	public void mB1(){///}
+}
+===========================================
+
+First Non-abstract class/concrete class is responsible for implementing all inherited abstract methods from abstract classes or interfaces.
+
+===========================================
+
+polymorphism:
+	ability of object to take many forms:
+
+	reference type for object can be parent class or parent interface.
+
+	Person p1=new Student();
+
+	object is student
+	reference is parent class
+==================================
+
+public class A {}
+public class B extends A {}
+public class C extends B {}
+
+A obj = new B();
+A obj = new C();
+B obj = new C()
+==================================
+
+public class A {
+	int num = 10;
+	public void m1() {
+		println("A-m1");
+	}
+}
+public class B extends A {
+	int num = 20;
+	String str = "java";
+	public void m2() {
+		println("B-m2");
+	}
+	@Override
+	public void m1() {
+		println("B-m1");
+	}
+}
+
+A a = new B();
+println(a.num); => 10
+a.m1(); => "B-m1"
+
+Below are not accessible:
+	a.str
+	a.m2();
+=============================
+
+public interface WebDriver{
+	get,findElement, close, quit
+}
+public interface TakesScreenshot{
+	getScreenshotAs(..)..
+}
+
+public class ChromeDriver implements WebDriver,TakesScreenshot
+
+WebDriver driver = new ChromeDriver();
+driver.get(url)
+Error: driver.getScreenshotAs()
+
+So we need to downcast to TakesScreenshot.
+
+((TakesScreenshot)driver).getScreenshotAs();
+
+TakesScreenshot screenshotDriver = (TakesScreenshot)driver;
+screenshotDriver.getScreenshotAs(A);
+screenshotDriver.getScreenshotAs(B);
+
+=======================================
 
 
 

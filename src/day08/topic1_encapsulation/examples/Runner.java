@@ -16,6 +16,8 @@ public class Runner {
         budget.setAnnualBudget(100_000_000);
         // other methods here
         // there is no getter, so we will never be able to read(get) the value
-
+        AttendanceRecords atr = new AttendanceRecords();
+        atr.setInfo("java review class");
+        System.out.println(atr.getInfo());
     }
 }

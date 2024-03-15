@@ -37,6 +37,7 @@ public class Ex01ListObjects {
         list3.add('c');
         list3.add('d');
         System.out.println(list3);
+        list3.remove('c');
 
         System.out.println("------------------------------------");
 
@@ -44,8 +45,8 @@ public class Ex01ListObjects {
         //      Why not List Reference?
         //        ((List)stack).push(); The List reference does not have access to the push method
         stack.push("a");
-        stack.push("b");
-        stack.push("c");
+        System.out.println(stack.add("b"));//returns true or false
+        System.out.println(stack.push("c")); //returns same value c
         System.out.println(stack);
 
         System.out.println("At the top " + stack.peek()); // checks what's at the top of the stack

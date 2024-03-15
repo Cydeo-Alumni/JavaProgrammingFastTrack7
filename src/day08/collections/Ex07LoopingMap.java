@@ -12,6 +12,7 @@ public class Ex07LoopingMap {
         map.put("April", 4);
 
 //        for( : map) only map doesn't work
+        map.forEach((k,v) -> System.out.println(k + " = " + v));
 
         for (String eachKey : map.keySet()) { // iterates through a Set of keys
             System.out.println("key - " + eachKey);

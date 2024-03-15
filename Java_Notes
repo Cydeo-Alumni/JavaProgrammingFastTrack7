@@ -1312,13 +1312,98 @@ screenshotDriver.getScreenshotAs(B);
 
 =======================================
 
+IQ: how can you handle large of amounts of Data?
 
+In my project, there are modules that generate large amount of data in different formats.
 
+I normally analyze the data formats that i am working with, and choose the most efficient approach.
 
+Pojo/model class with Java collections.
 
+If I can implement POJO classes/Model to match the data I am working with, I add model/pojo classes and use java collections to manipulate large amount of data.
 
+Data pipeline:
+JanusGraph --> Format using pojo and collections -> kafka -> Datascience team score -> kafka -> Format using pojo and collections -> elastic search database -> Client companies
 
+ETL pipeline -> Extract, Transform, Load
+================================================
 
+Big data -> millions of records
+Big data ETL tools -> Hadoop, Spark, Informatica etc
+Data engineering
+
+================================================
+
+IQ:Common question different between Collection / Collections
+
+Collection is an interface is parent interface for List, Set, Queue. It contains common methods for all collection types like
+add, remove, size etc
+
+Collections is a utility class that has useful methods when working with collections like sort, binarySearch, reverse, max, min etc
+
+List:
+	-> preserves insertion order
+	-> allows duplicates
+	-> get read values using indexes
+	-> allows null values
+
+List has several implementations:
+	ArrayList -> resizable array, most common we use, based on array internally.
+	Vector -> is also resizable array but it is syncronized
+	linkedList -> based on nodes connected to each other.
+	node:
+		 its value ,  prev and next reference.
+		 if prev is null and next is not -> we are at beginning node(index 0)
+		 if prev is not null but next one is null -> we are at the end. index is length()-1
+========================================
+
+which one to use LinkedList or Arraylist?
+
+ArrayList is more commonly used.
+
+Reading:
+get(5) -> arraylist -> faster -> Time complexity O(1)
+	   -> linkedList -> slower -> Time complexity O(n):
+	   				Unless first or last then O(1)
+
+Adding:
+add(value) or add(index, value)
+		->arraylist -> O(1) if arrays does not need to be resized. O(n) if needs to be resized(common)
+		->linkedList -> O(1) addFirst, addLast.
+			inserting to middle is O(n)
+
+Remove:
+	remove(Elem):
+		-> arraylist -> O(n) -> needs to remove and resize array
+		-> linkedList -> O(1) -> if first or last elements.
+				O(n) -> all other elements
+
+Big O notation describes time and space complexity
+time complexity how long it takes for code to run based on input
+
+space complexity - how much memory it will take
+
+O(1) -> regardless how much input we have , it takes same exact time
+O(n) -> depending on input, time it takes to complete also grows
+================================
+
+SET -> collection of unique values
+
+	-> does not allow duplicate data
+	-> does not preserve insertion order
+	-> allow null value
+	-> no indexes
+
+Implementations:
+	Hashset -> most common implementation.
+		ex: Selenium window handles
+
+	LinkedHashSet -> preserves insertion order
+
+	TreeSet -> implements SortedSet-> sorts values
+
+Set implementations use Hashmap keys internally
+==========================
 
 
 

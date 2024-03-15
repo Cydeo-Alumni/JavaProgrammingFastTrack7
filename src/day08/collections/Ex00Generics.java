@@ -4,13 +4,13 @@ public class Ex00Generics {
     public static void main(String[] args) {
 //        Anything<> anything = new Anything<>(); need to define a type
         Anything<String> anything = new Anything<>();
-        anything.object = "hello";
-        System.out.println(anything.object);
+        anything.value = "hello";
+        System.out.println(anything.value);
         anything.method("Java");
 
         Anything<Integer> other = new Anything<>();
-        other.object = 25;
-        System.out.println(other.object);
+        other.value = 25;
+        System.out.println(other.value);
         other.method(1);
 
         // Use cases:
@@ -25,8 +25,8 @@ public class Ex00Generics {
 }
 
 class Anything<T> {
-
-    T object;
+    //Anything<Integer> v = new Anything();
+    T value;
 
     void method(T t) {
         if (t instanceof String) {

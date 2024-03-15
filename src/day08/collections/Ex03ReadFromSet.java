@@ -41,6 +41,8 @@ public class Ex03ReadFromSet {
         set3.add("world");
         System.out.println(set3);
 
+        set3.forEach(e -> System.out.println(e));
+
         System.out.println("------------------------------------");
 
         List<String> list = new ArrayList<>(set3); // Check constructor
